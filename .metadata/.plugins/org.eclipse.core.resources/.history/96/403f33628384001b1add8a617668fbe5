@@ -1,0 +1,43 @@
+package TASession;
+import java.util.*;
+public class prices {
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    Medicine[] med=new Medicine[4];
+	    for(int i=0;i<med.length;i++)
+	    {
+	        med[i]=new Medicine(sc.nextLine(),sc.nextLine(),sc.nextLine(),sc.nextInt());
+	    }
+	    String search=sc.nextLine();
+	    perform(search,med);
+}
+
+private static void perform(String search, Medicine[] med) {
+		// TODO Auto-generated method stub
+		for(int i=0;i<med.length;i++)
+		{
+			Medicine m=med[i];
+			String r=m.disease;
+			if(r.equals(search))
+			{
+				System.out.println(m.price);
+			}
+		}
+			
+		
+	}
+
+class Medicine
+{
+    String medicinename;
+    String batchno;
+    String disease;
+    int price;
+    Medicine(String medicinename,String batchno,String disease,int price)
+    {
+        this.medicinename=medicinename;
+        this.batchno=batchno;
+        this.disease=disease;
+        this.price=price;
+    }
+}
