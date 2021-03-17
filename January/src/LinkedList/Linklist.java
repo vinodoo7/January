@@ -554,6 +554,43 @@ public class Linklist {
 
 	}
 	
+	public Node elementcycleAt()
+	{
+		 return elementcycleAt(Head);
+	}
+
+	
+	private Node elementcycleAt(Node head) {
+		// TODO Auto-generated method stub
+		 if(head==null)
+	        {
+	            return null;
+	        }
+	        Node start=head;
+	        Node entry=head;
+	        Node fast=head;
+	        while(start!=null && fast!=null && fast.next!=null )
+	        {
+	            start=start.next;
+	            fast=fast.next.next;
+	            if(start==fast)
+	            {
+	                start=head;
+	                while(start!=fast)
+	                {
+	                    start=start.next;
+	                    fast=fast.next;
+	                }
+	                return start;
+	            }
+	            
+	            
+	        }
+	       
+	        return null;
+		
+	}
+
 	public Node intersection()
 	{
 		return intersection(Head,Head);
