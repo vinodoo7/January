@@ -1,5 +1,6 @@
 package LinkedList;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 
 public class Linklist {
@@ -550,9 +551,91 @@ public class Linklist {
 			}
 				temp=temp.next;
 		}
-		
-		
-		
+
+	}
+	
+	public Node intersection()
+	{
+		return intersection(Head,Head);
+	}
+
+	private Node intersection(Node head1, Node head2) {
+		// TODO Auto-generated method stub
+		// Using Hashing
+		 Node a=head1;
+         Node b=head2;
+        HashSet<Node> hs=new HashSet<>();
+        
+        while(a!=null)
+        {
+            hs.add(a);
+            a=a.next;
+        }
+        while(b!=null)
+        {
+           if(hs.contains(b))
+           {
+               return b;
+           }
+            b=b.next;
+        }
+        return null;
+        // Using two for loops
+//         ListNode a=headA;
+//         ListNode b=headB;
+//         int size1=0;
+//         int size2=0;
+//         while(a!=null)
+//         {
+//             a=a.next;
+//             size1++;
+//         }
+//         while(b!=null)
+//         {
+//             b=b.next;
+//             size2++;
+//         }
+//         System.out.println(size1+" "+size2);
+//         a=headA;
+        
+//         for(int i=0;i<size1;i++)
+//         {
+//             b=headB;
+//             for(int j=0;j<size2;j++)
+//             {
+//                 if(a==b)
+//                 {
+//                     System.out.println(a.val+" "+b.val+" a==b");
+//                     return a;
+//                 }
+//                 else
+//                 {
+//                     System.out.println(a.val+" "+b.val+" a!=b");
+//                     if(b.next!=null)
+//                     {
+//                         b=b.next;
+//                     }
+                    
+//                 }
+//             }
+//              if(a.next!=null)
+//                     {
+//             a=a.next;}
+                    
+//         }
+//         return null;
+        
+        // Using length
+//        if( null==head1 || null==head2 )
+//			return null;
+//		
+//		Node curA = head1, curB = head2;
+//		while( curA!=curB){
+//			curA = curA==null?head2:curA.next;
+//			curB = curB==null?head1:curB.next;
+//		}
+//		return curA
+      
 	}
 	
 }
