@@ -20,11 +20,12 @@ public class RotationOfTheArray {
 			for(int i=0;i<arr.length;i++)
 			{
 				int pos=(i+(arr.length-n))%arr.length;
-				System.out.println(pos);
+				System.out.print(pos+ " ");
 				res[pos]=arr[i];
 			}
 			
 		}
+		System.out.println();
 		for(int i=0;i<arr.length;i++)
 		{
 			System.out.print(res[i]+" ");

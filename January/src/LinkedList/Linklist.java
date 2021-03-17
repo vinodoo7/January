@@ -534,7 +534,41 @@ public class Linklist {
 		}
 		return false;
 	}
+	public Node rightrotation(int k)
+	{
+		return rightrotation(Head,k);
+	}
 	
+	private Node rightrotation(Node head, int k) {
+		// TODO Auto-generated method stub
+		if(head==null ||k==0)
+		{
+			return head;
+		}
+		Node temp=head;
+		int len=1;
+		while(temp.next!=null)
+		{
+			temp=temp.next;
+			len++;
+		}
+		System.out.println(len+" len");
+		 k=k%len;
+		 k=k-1;
+		 Node start=head;
+		 while(k>0)
+		 {
+			 start=start.next;
+			 k--;
+		 }
+		 Head=start.next;
+		 start.next=null;
+		 temp.next=head;
+		
+		
+		return Head;
+	}
+
 	public Node rotateListbyk(int k)
 	{
 		return rotateListbyk(Head,k);

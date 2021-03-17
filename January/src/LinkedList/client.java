@@ -20,7 +20,7 @@ public class client {
 		l1.Addlast(4);
 		l1.Addlast(5);
 		l1.Addlast(6);
-		l1.rotateListbyk(15);
+		l1.rightrotation(2);
 		l1.display();
 //		System.out.println();
 //		Linklist l2=new Linklist();
