@@ -535,6 +535,43 @@ public class Linklist {
 		return false;
 	}
 	
+	public Node rotateListbyk(int k)
+	{
+		return rotateListbyk(Head,k);
+	}
+	private Node rotateListbyk(Node head, int k) {
+		// TODO Auto-generated method stub
+		if(head==null)
+		{
+			return null;
+		}
+		//find length
+		Node temp=head;
+		int len=1;
+		while(temp.next!=null)
+		{
+			temp=temp.next;
+			len++;
+		}
+		temp.next=head;
+		k=k%len;
+		k=len-k;
+		
+		
+		//Node start=head;
+		while(k>0)
+		{
+			temp=temp.next;
+			k--;
+		}
+		Head=temp.next;
+		temp.next=null;
+		return Head;
+		//make tail.next==head for circular
+		// 
+		
+	}
+
 	public void removeduplicates()
 	{
 		removeduplicates(this.Head);
@@ -562,6 +599,8 @@ public class Linklist {
 	
 	private Node elementcycleAt(Node head) {
 		// TODO Auto-generated method stub
+		
+		//we can do by using Hashing Also
 		 if(head==null)
 	        {
 	            return null;
