@@ -13,6 +13,21 @@ public class Mincost2d {
 	
 
 	}
+	public static int mazerecursion(int mat[][],int dr,int dc)
+	{
+	    if(dr<0||dc<0)
+	    {
+	        return Integer.MAX_VALUE;
+	    }
+	    if(dr==0&&dc==0)
+	    {
+	        return mat[0][0];
+	    }
+	    int colincrement=mazerecursion(mat,dr-1,dc);
+	    int rowincrement=mazerecursion(mat,dr,dc-1);
+	    
+	    return Math.min(rowincrement,colincrement)+mat[dr][dc];
+	}
 	public static int mincost1(int mat[][],int dr,int dc)
 	{
         for(int i=0;i<=dr;i++){
