@@ -8,7 +8,7 @@ public class fibanacciserie {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int n=4;
+		int n=7;
 		//System.out.println(fib(n));
 		int strg[]=new int[n+1];
 		System.out.println(fibdp(n,strg));
